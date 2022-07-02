@@ -24,25 +24,24 @@ typedef struct
                                 //and the first pixel in file is drawn at the bottom left of the image followed by other pixels.
     uint16_t biPlanes;          // Number of color planes   // must be 1
     uint16_t biBitCount;        // Bits per pixel           //24
-/*Bits per Pixel used to store palette entry information. This also identifies in an indirect way the number of possible colors. Possible values are:
-1 = monochrome palette. NumColors = 1
-4 = 4bit palletized. NumColors = 16
-8 = 8bit palletized. NumColors = 256
-16 = 16bit RGB. NumColors = 65536
-24 = 24bit RGB. NumColors = 16M */
+                                /*Bits per Pixel used to store palette entry information. This also identifies in an indirect way the number of possible colors. Possible values are:
+                                1 = monochrome palette. NumColors = 1
+                                4 = 4bit palletized. NumColors = 16
+                                8 = 8bit palletized. NumColors = 256
+                                16 = 16bit RGB. NumColors = 65536
+                                24 = 24bit RGB. NumColors = 16M */
     uint32_t biCompression;     // Compression type         //0
-/*Type of Compression
-0 = BI_RGB   no compression
-1 = BI_RLE8 8bit RLE encoding
-2 = BI_RLE4 4bit RLE encoding */
+                                /*Type of Compression
+                                0 = BI_RGB   no compression
+                                1 = BI_RLE8 8bit RLE encoding
+                                2 = BI_RLE4 4bit RLE encoding */
     uint32_t biSizeImage;       // Image size in bytes  //Can be 0 if image is not compressed, otherwise is the size of the compressed image
     int32_t  biXPelsPerMeter;   // horizontal resolution: Pixels/meter
     int32_t  biYPelsPerMeter;   // vertical resolution: Pixels/meter
-    uint32_t biClrUsed;         // Number of colors
-/*Number of actually used colors. For a 8-bit / pixel bitmap this will be 100h or 256.*/
+    uint32_t biClrUsed;         /*Number of actually used colors. For a 8-bit / pixel bitmap this will be 100h or 256.*/
     uint32_t biClrImportant;
-/*Number of important colors
-0 = all*/
+                                /*Number of important colors
+                                0 = all*/
 } __attribute__((__packed__)) BITMAPINFOHEADER; //Total 40 bytes
 
 //Device Independent Bitmap (DIB) = DIB format that will allow Windows to display the bitmap on any type of display device.
